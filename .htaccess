@@ -1,0 +1,4 @@
+<IfModule mod_ext_filter.c>
+    AddOutputFilter pandoc md
+</IfModule>
+

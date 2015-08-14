@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+$for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+$endfor$
+
+$if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+$endif$
+
+    <title>$if(site-title)$$site-title$ - $endif$$pagetitle$</title>
+
+$for(css)$
+    <link rel="stylesheet" href="$css$" />
+$endfor$
+
+$for(header-includes)$
+    $header-includes$
+$endfor$
+
+</head>
+<body class="$body-class$">
+
+$for(include-before)$
+    $include-before$
+$endfor$
+
+$if(site-title)$
+    <header class="$header-class$" role="banner">
+        <span class="site-title">$site-title$</span>
+    </header>
+$endif$
+
+$if(toc)$
+<div class="container">
+    <nav class="$toc-class$">
+        $toc$
+    </nav>
+<div>
+$endif$
+
+<div class="container">
+    $if(title)$
+        <h1 class="$title-class$">$title$</h1>
+    $endif$
+
+    <div class="$content-class$">
+
+$body$
+
+    <div>
+</div>
+
+
+$if(author)$
+    <footer role="contentinfo" class="$footer-class$">
+
+    $for(author)$
+        <span class="author">$author$</span>
+    $endfor$
+
+    $if(date)$
+        <time class="date">$date$</time>
+    $endif$
+
+    </footer>
+$endif$
+
+
+$for(include-after)$
+    $include-after$
+$endfor$
+
+</body>
+</html>
